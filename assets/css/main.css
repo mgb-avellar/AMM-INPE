@@ -1612,7 +1612,7 @@ input, select, textarea {
 
 		.box .image.featured {
 			position: relative;
-			width: auto;
+			width: 20 px;/* auto; */
 			left: 1.75em;
 			top: 1.75em;
 			margin: -4.5em 0 4.25em -3.5em;
@@ -1839,7 +1839,7 @@ input, select, textarea {
 			.image.featured-gardel-posts {
 				display: block;
 				width: 100%;
-				height: 875px; /* Ajuste essa altura para o valor desejado */
+				height: 475px; /* Ajuste essa altura para o valor desejado */
 				object-fit: cover; /* Garante que a imagem se ajuste ao contêiner mantendo a proporção */
 				margin: 0 0 2em 0;
 			}
