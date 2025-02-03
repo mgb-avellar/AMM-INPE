@@ -1831,7 +1831,7 @@ input, select, textarea {
 			.image.featured-interests {
 				display: block;
 				width: 100%;
-				height: 50px; /* Ajuste essa altura para o valor desejado */
+				height: 250px; /* Ajuste essa altura para o valor desejado */
 				object-fit: cover; /* Garante que a imagem se ajuste ao contêiner mantendo a proporção */
 				margin: 0 0 2em 0;
 			}
@@ -1853,7 +1853,7 @@ input, select, textarea {
 		/*display: inline-block;
 		outline: 0;*/
 		/*flex-basis: 650px; /* Tamanho fixo para a imagem */
-		flex: 0 0 150px; /* Garante que a imagem tenha uma largura fixa e não encolha */
+		flex: 0 0 50px; /* Garante que a imagem tenha uma largura fixa e não encolha */
 		margin-right: 20px; /* Espaçamento à direita da imagem */
 	}	
 
@@ -1893,7 +1893,7 @@ input, select, textarea {
 			margin-right: 20px; /* Espaçamento à direita da imagem */
 		}	
 	
-			/* Estilo das imagens pessoais */
+			/* Estilo das imagens dos livros */
 			.image-book img {
 				width: 100%;  /* Define uma largura fixa */
 				height: auto;  /* Mantém a proporção da imagem */
