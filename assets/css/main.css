@@ -1836,7 +1836,7 @@ input, select, textarea {
 				margin: 0 0 2em 0;
 			}
 			
-			.image.featured-gardel-posts {
+			.image.featured-aristarco-posts {
 				display: block;
 				width: 100%;
 				height: 475px; /* Ajuste essa altura para o valor desejado */
@@ -1849,11 +1849,11 @@ input, select, textarea {
 			margin: 0 2em 2em 0;
 		}
 
-	.image-personal {
+	.image-personal {		/* fotos dos membros do grupo */
 		/*display: inline-block;
 		outline: 0;*/
 		/*flex-basis: 650px; /* Tamanho fixo para a imagem */
-		flex: 0 0 50px; /* Garante que a imagem tenha uma largura fixa e não encolha */
+		flex: 0 0 150px; /* Garante que a imagem tenha uma largura fixa e não encolha */
 		margin-right: 20px; /* Espaçamento à direita da imagem */
 	}	
 
@@ -1885,7 +1885,7 @@ input, select, textarea {
 			margin: 0 2em 2em 0;
 		}		
 
-		.image-book {
+		.image-book {		/* imagens das capas dos livros */
 			/*display: inline-block;
 			outline: 0;*/
 			/*flex-basis: 650px; /* Tamanho fixo para a imagem */
