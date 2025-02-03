@@ -1815,7 +1815,7 @@ input, select, textarea {
 			.image.featured {
 				display: block;
 				width: 100%;
-				height: 350px; /* Ajuste a altura da imagem para deixar espaço para o título e botão */
+				height: 50px; /* Ajuste a altura da imagem para deixar espaço para o título e botão */
 				object-fit: cover;
 				margin: 0 0 -2.5em 0;
 			}
