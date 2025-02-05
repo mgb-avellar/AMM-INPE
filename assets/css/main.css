@@ -180,25 +180,7 @@ input, select, textarea {
 	.container {
 		margin: 0 auto;
 		max-width: 100%;
-		/*width: 70em;*/
-		display: flex; /* Adiciona flexbox para organizar os itens lado a lado */
-		align-items: flex-start; /* Alinha os itens verticalmente no centro */
-		justify-content: flex-start; /* Alinha os itens no início da linha */
-		flex-wrap: nowrap; /* Permite que os itens quebrem de linha em telas menores */
-	}
-
-		/* O texto deve ocupar o restante do espaço ao lado da imagem */
-	.container > div {
-		flex-grow: 1; /* Faz o texto ocupar o espaço restante ao lado da imagem */
-		/*flex-shrink: 1; /* Permite que o bloco de texto encolha em telas menores */
-		min-width: 0; /* Garante que o texto não force o container a expandir */
-	}
-
-	/* Responsividade em telas pequenas */
-	@media screen and (max-width: 736px) {
-		.container {
-			flex-direction: column; /* Para telas menores, coloca imagem e texto em coluna */
-		}
+		width: 70em;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -232,6 +214,61 @@ input, select, textarea {
 			}
 
 		}
+
+	.container-img-pessoal {
+		margin: 0 auto;
+		max-width: 100%;
+		width: 70em;
+		display: flex;           /* Habilita Flexbox para posicionar os elementos lado a lado */
+    	align-items: flex-start; /* Alinha o topo da imagem com o topo do texto */
+    	gap: 20px;               /* Espaçamento entre a imagem e o texto */
+	}
+	
+		@media screen and (max-width: 1680px) {
+	
+			.container-img-pessoal {
+				width: 70em;
+			}
+	
+		}
+	
+		@media screen and (max-width: 1280px) {
+	
+			.container-img-pessoal {
+				width: calc(100% - 60px);
+			}
+	
+		}
+	
+		@media screen and (max-width: 980px) {
+	
+			.container-img-pessoal {
+				width: calc(100% - 80px);
+			}
+	
+		}
+	
+		@media screen and (max-width: 736px) {
+	
+			.container-img-pessoal {
+				width: calc(100% - 40px);
+			}
+	
+		}		
+
+	#membrosAristarco-container section {
+		margin-bottom: 20px !important; /* Diminui espaço entre os conteúdos */
+		padding-bottom: 10 !important;
+	}
+
+	#membrosAristarco-container .box.post {
+		margin-top: -10px !important; /* Reduz o espaço extra acima dos conteúdos carregados */
+		padding-top: 0 !important; 
+		padding-bottom: 0 !important;
+	}
+		
+		
+				
 
 /* Row */
 
@@ -1456,24 +1493,6 @@ input, select, textarea {
 
 		}
 
-		.same-height-row {
-			display: flex;
-			flex-wrap: wrap;
-		}
-		
-		.same-height-row > .col-8,
-		.same-height-row > .col-4 {
-			display: flex;
-			flex-direction: column;
-			justify-content: stretch;
-		}
-		
-		.same-height-row > .col-8 .box,
-		.same-height-row > .col-4 .box {
-			height: 100%;
-		}
-			
-
 /* Form */
 
 	form label {
@@ -1607,7 +1626,7 @@ input, select, textarea {
 	.box {
 		background: #ffffff;
 		border-bottom: solid 1px #ccc;
-		padding: 2.75em 1.75em 2.75em 1.75em;
+		padding: 2.75em 1.75em 2.75em 1.75em;		
 	}
 
 		.box .image.featured {
@@ -1616,6 +1635,26 @@ input, select, textarea {
 			left: 1.75em;
 			top: 1.75em;
 			margin: -4.5em 0 4.25em -3.5em;
+		}
+
+		.box .image.featured-postPage {
+			position: relative;
+			width: 40%;
+			height: auto;
+			display: block; /* Garante que a imagem não se comporte como inline */
+			left: 50%; /* Move a imagem para o meio do elemento pai */
+			transform: translateX(-50%); /* Ajusta o centro da imagem corretamente */
+			top: 2.75em;
+			margin: -4.5em 0 4.25em 0; /* Ajuste fino para manter o espaçamento correto */
+
+			/*
+				-4.5em → Move a imagem para cima (margem negativa na parte superior).
+				0 → Não adiciona margem à direita.
+				4.25em → Adiciona um espaçamento abaixo da imagem, empurrando os elementos seguintes para baixo.
+				0 → Não adiciona margem à esquerda.
+
+			*/
+
 		}
 
 		.box.post header {
@@ -1637,6 +1676,8 @@ input, select, textarea {
 			margin-bottom: 0;
 		}
 
+	/* NOVA CAIXA PARA PADRONIZAR OS TÓPICOS QUE ESTUDAMOS */ 	
+
 	.box-topicos-estudos {
 		background: #ffffff;
 		border-bottom: solid 1px #ccc;
@@ -1644,11 +1685,11 @@ input, select, textarea {
 	}
 	
 		.box-topicos-estudos .image.featured {
-			position: relative;
-			width: auto;
-			left: 1.75em;
-			top: 1.75em;
-			margin: -4.5em 0 4.25em -3.5em;
+			width: 100%;
+			height: 300px; /* Altura da imagem */
+			object-fit: cover;
+			margin: -40px 0 40px -30px;
+			/* margin: 0 0 5.5em 0; /* Aumenta a margem inferior para separar da área do título */
 		}
 	
 		.box-topicos-estudos.post header {
@@ -1670,24 +1711,12 @@ input, select, textarea {
 			margin-bottom: 0;
 		}
 
-		/*--------------------------------------------------------------*/
-
-
-		
-		.box-topicos-estudos .image.featured {
-			width: 100%;
-			height: 300px; /* Altura da imagem */
-			object-fit: cover;
-			margin: -40px 0 40px -30px;
-			/* margin: 0 0 5.5em 0; /* Aumenta a margem inferior para separar da área do título */
-		}
-		
 		.box-topicos-estudos header {
 			flex-shrink: 0; /* Impede que o título expanda */
 			text-align: center;
 			margin: 0;
 		}
-		
+
 		.box-topicos-estudos header h3 {
 			font-size: 1.2em;
 			line-height: 1.2em;
@@ -1697,12 +1726,22 @@ input, select, textarea {
 			white-space: normal;
 			margin: 0 0 1em 0; /* Espaço entre o título e o botão */
 		}
-		
+
 		.box-topicos-estudos footer {
 			margin-top: auto; /* Mantém o botão na parte inferior */
 			text-align: center;
 		}
 
+		.box-topicos-estudos > p { /* estilo deve afetar apenas os parágrafos dentro da .box-topicos-estudos, mas fora do header, use um seletor mais específico: ideal para texto após os títulos das caixas de tópicos de estudo. */
+			font-size: 1.0em;
+			line-height: 1.2em;
+			height: 4.8em; /* Mantém altura fixa para o texto abaixo do título em até 4 linhas*/
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: normal;
+			margin: 0 0 1em 0;
+		}
+		
 
 /* Button */
 
@@ -1811,38 +1850,12 @@ input, select, textarea {
 				margin: 0 auto;
 				width: auto;
 			}
-			
-			.image.featured {
-				display: block;
-				width: 100%;
-				height: 350px; /* Ajuste a altura da imagem para deixar espaço para o título e botão */
-				object-fit: cover;
-				margin: 0 0 -2.5em 0;
-			}
 
-			/*.image.featured {
-				display: block;
-				width: 100%;
-				height: 350px; /* Ajuste essa altura para o valor desejado */
-			/*	object-fit: cover; /* Garante que a imagem se ajuste ao contêiner mantendo a proporção */
-			/*	margin: 0 0 2em 0;
-			}*/	
-			
-			.image.featured-interests {
-				display: block;
-				width: 100%;
-				height: 250px; /* Ajuste essa altura para o valor desejado */
-				object-fit: cover; /* Garante que a imagem se ajuste ao contêiner mantendo a proporção */
-				margin: 0 0 2em 0;
-			}
-			
-			.image.featured-aristarco-posts {
-				display: block;
-				width: 100%;
-				height: 475px; /* Ajuste essa altura para o valor desejado */
-				object-fit: cover; /* Garante que a imagem se ajuste ao contêiner mantendo a proporção */
-				margin: 0 0 2em 0;
-			}
+		.image.featured {
+			display: block;
+			width: 100%;
+			margin: 0 0 2em 0;
+		}
 
 		.image.left {
 			float: left;
@@ -1854,75 +1867,37 @@ input, select, textarea {
 		outline: 0;*/
 		/*flex-basis: 650px; /* Tamanho fixo para a imagem */
 		flex: 0 0 150px; /* Garante que a imagem tenha uma largura fixa e não encolha */
-		margin-right: 20px; /* Espaçamento à direita da imagem */
+		margin-right: 10px; /* Espaçamento à direita da imagem */
 	}	
-
+		
 		/* Estilo das imagens pessoais */
 		.image-personal img {
 			width: 100%;  /* Define uma largura fixa */
 			height: auto;  /* Mantém a proporção da imagem */
 			/*border-radius: 50%; /* Deixa a imagem em formato circular */
 		}
-
+		
 		.image-personal.centered {
 			display: block;
 			margin: 0 0 2em 0;
 		}
-
-			.image-personal.centered img {
-				margin: 0 auto;
-				width: auto;
-			}
-
+		
+		.image-personal.centered img {
+			margin: 0 auto;
+			width: auto;
+		}
+		
 		.image-personal.featured {
 			display: block;
 			width: 100%;
 			margin: 0 0 2em 0;
 		}
-
+		
 		.image-personal.left {
 			float: left;
 			margin: 0 2em 2em 0;
-		}		
+		}			
 
-		.image-book {		/* imagens das capas dos livros */
-			/*display: inline-block;
-			outline: 0;*/
-			/*flex-basis: 650px; /* Tamanho fixo para a imagem */
-			flex: 0 0 220px; /* Garante que a imagem tenha uma largura fixa e não encolha */
-			margin-right: 20px; /* Espaçamento à direita da imagem */
-		}	
-	
-			/* Estilo das imagens dos livros */
-			.image-book img {
-				width: 100%;  /* Define uma largura fixa */
-				height: auto;  /* Mantém a proporção da imagem */
-				/*border-radius: 50%; /* Deixa a imagem em formato circular */
-			}
-	
-			.image-book.centered {
-				display: block;
-				margin: 0 0 2em 0;
-			}
-	
-				.image-bookl.centered img {
-					margin: 0 auto;
-					width: auto;
-				}
-	
-			.image-book.featured {
-				display: block;
-				width: 100%;
-				margin: 0 0 2em 0;
-			}
-	
-			.image-book.left {
-				float: left;
-				margin: 0 2em 2em 0;
-			}		
-
-
-			
 /* List */
 
 	ul {
@@ -2376,7 +2351,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background: #CCE8F4 url("../../images/pic01.jpg");
+		background: #CCE8F4 url("../../images/Screenshot from 2025-02-04 17-53-00.png");
 		background-position: center center;
 		background-size: auto 100%;
 		background-repeat: no-repeat;
@@ -2682,19 +2657,6 @@ input, select, textarea {
 					margin-top: 0;
 				}
 
-			.box-topicos-estudos footer ul.actions li {
-				margin: 1em 0 0 0;
-				display: block;
-			}
-				
-				.box-topicos-estudos footer ul.actions li .button {
-					width: 100%;
-				}
-				
-				.box-topicos-estudos footer ul.actions li:first-child {
-					margin-top: 0;
-				}
-				
 		/* Header */
 
 			#header {
@@ -2998,25 +2960,6 @@ input, select, textarea {
 					margin-top: 0;
 					font-size: 1em;
 				}
-
-			.box-topicos-estudos {
-				padding: 25px 15px 20px 15px;
-			}
-	
-				.box-topicos-estudos.post header {
-					padding-top: 0;
-					margin: 0 0 1em 0;
-				}
-	
-				.box-topicos-estudos.post h2 {
-					font-size: 1.5em;
-					line-height: 1.5em;
-				}
-	
-				.box-topicos-estudos.post header > p {
-					margin-top: 0;
-					font-size: 1em;
-				}				
 
 		/* Divided */
 
