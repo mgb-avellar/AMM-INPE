@@ -27,11 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 container.appendChild(div);
 
                 setTimeout(() => {
+                    console.log("Reinicializando scripts do menu após carregar o header.");
+                    
                     atualizarMenuAtivo();
-                    inicializarDropotron(); // Oculta o banner se necessário
-                    inicializarMenuMobile(); // Chamando a nova função para corrigir o menu mobile
+                    inicializarDropotron();
+                    inicializarMenuMobile();
                     ocultarBanner();
-                }, 100); // Pequeno atraso para garantir que o DOM foi atualizado
+                
+                    // Garante que outros scripts possam reagir ao carregamento do header
+                    document.dispatchEvent(new Event("headerLoaded"));
+                }, 300);
+                
                 
                 carregarArquivos(indexGrupo, indexArquivo + 1);
 
