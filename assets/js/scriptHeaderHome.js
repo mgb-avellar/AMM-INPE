@@ -87,16 +87,30 @@ document.addEventListener("DOMContentLoaded", function () {
     function inicializarMenuMobile() {
         const menuButton = document.querySelector(".menu-icon"); // Botão do menu mobile
         const sidebar = document.querySelector("#nav"); // Sidebar do menu
+        const menuItems = document.querySelectorAll("#nav ul li > a"); // Links do menu
+        const dropdownItems = document.querySelectorAll("#nav ul li > ul"); // Submenus
     
         if (menuButton && sidebar) {
+            // Abre/fecha o menu ao clicar no botão
             menuButton.addEventListener("click", () => {
                 sidebar.classList.toggle("open");
             });
-            console.log("Menu mobile inicializado!");
-        } else {
-            console.error("Erro: Elementos do menu mobile não encontrados.");
         }
+    
+        // Expande/colapsa submenus quando clicados
+        menuItems.forEach((item) => {
+            item.addEventListener("click", (event) => {
+                const parentLi = item.parentElement;
+                const subMenu = parentLi.querySelector("ul");
+    
+                if (subMenu) {
+                    event.preventDefault(); // Impede que o link leve a outra página diretamente
+                    subMenu.classList.toggle("open");
+                }
+            });
+        });
     }
+    
     
 
     carregarArquivos();

@@ -3086,51 +3086,29 @@ input, select, textarea {
 	}
 
 
-/* ==== Correção da visibilidade do menu no mobile ==== */
-
-/* Garante que o header esteja visível */
-/*
-#header {
-    display: block !important;
-    width: 100%;
-    position: relative;
-    z-index: 1000;
-}
-*/
-
-/* Força a visibilidade do menu */
-#nav {
-    display: block !important;
-    position: relative !important;
-    z-index: 1001;
-}
-
-/* Garante que o menu lateral (sidebar) apareça corretamente */
-#nav ul {
-    display: block !important;
-}
-
-/* Ajusta a posição do menu no mobile */
+/* ======= Correção do menu no mobile ======= */
 @media screen and (max-width: 980px) {
+    /* Esconde a navegação por padrão */
     #nav {
-        position: fixed !important;
+        display: none;
+        position: fixed;
         top: 0;
         left: 0;
         width: 250px;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(0, 0, 0, 0.95);
         color: white;
         padding: 20px;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
     }
 
-    /* Quando o menu estiver aberto */
+    /* Quando o menu for ativado */
     #nav.open {
-        transform: translateX(0);
+        display: block;
     }
 
-    /* Corrige a visibilidade dos itens do menu */
+    /* Garante que os links do menu fiquem visíveis e clicáveis */
     #nav ul {
         list-style: none;
         padding: 0;
@@ -3145,6 +3123,17 @@ input, select, textarea {
         color: white !important;
         text-decoration: none;
         font-size: 18px;
+        display: block;
+    }
+
+    /* Esconde os submenus (dropdown) por padrão */
+    #nav ul li ul {
+        display: none;
+        padding-left: 15px;
+    }
+
+    /* Quando um item de menu com submenu for clicado, exibe os subitens */
+    #nav ul li.open > ul {
         display: block;
     }
 
