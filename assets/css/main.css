@@ -252,6 +252,11 @@ input, select, textarea {
 	
 			.container-img-pessoal {
 				width: calc(100% - 40px);
+				flex-direction: column; /* Empilha os elementos no mobile */
+				align-items: center; /* Centraliza tudo */
+				text-align: center; /* Garante que o texto fique legível */
+				gap: 10px; /* Reduz o espaçamento no mobile */
+				padding: 0 15px; /* Evita que o texto encoste na borda da tela */
 			}
 	
 		}		
