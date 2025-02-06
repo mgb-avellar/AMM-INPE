@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("headerHome-container");
-    const grupos = [{ arquivos: ["header.html"], classes: [] }];
+    const grupos = [{ arquivos: ["header.html"], classes: ["col-12"] }];
 
     function carregarArquivos(indexGrupo = 0, indexArquivo = 0) {
         if (indexGrupo >= grupos.length) return;
