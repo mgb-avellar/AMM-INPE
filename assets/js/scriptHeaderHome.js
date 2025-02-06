@@ -25,11 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 div.innerHTML = html;
                 container.appendChild(div);
 
-                atualizarMenuAtivo();
-                inicializarDropotron();
-                ocultarBanner(); // Oculta o banner se necessário
+                setTimeout(() => {
+                    atualizarMenuAtivo();
+                    inicializarDropotron(); // Oculta o banner se necessário
+                    inicializarMenuMobile(); // Chamando a nova função para corrigir o menu mobile
+                    ocultarBanner();
+                }, 100); // Pequeno atraso para garantir que o DOM foi atualizado
+                
                 carregarArquivos(indexGrupo, indexArquivo + 1);
-            })
+
+            })            
+
             .catch(error => console.error("Erro no fetch:", error));
     }
 
@@ -77,6 +83,21 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
+
+    function inicializarMenuMobile() {
+        const menuButton = document.querySelector(".menu-icon"); // Botão do menu mobile
+        const sidebar = document.querySelector("#nav"); // Sidebar do menu
+    
+        if (menuButton && sidebar) {
+            menuButton.addEventListener("click", () => {
+                sidebar.classList.toggle("open");
+            });
+            console.log("Menu mobile inicializado!");
+        } else {
+            console.error("Erro: Elementos do menu mobile não encontrados.");
+        }
+    }
+    
 
     carregarArquivos();
 });
