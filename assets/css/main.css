@@ -1735,7 +1735,7 @@ input, select, textarea {
 		.box-topicos-estudos > p { /* estilo deve afetar apenas os parágrafos dentro da .box-topicos-estudos, mas fora do header, use um seletor mais específico: ideal para texto após os títulos das caixas de tópicos de estudo. */
 			font-size: 1.0em;
 			line-height: 1.2em;
-			height: 4.8em; /* Mantém altura fixa para o texto abaixo do título em até 4 linhas*/
+			height: 6.0em; /* Mantém altura fixa para o texto abaixo do título em até 5 linhas*/
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: normal;
