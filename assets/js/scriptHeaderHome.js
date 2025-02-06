@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const div = document.createElement("div");
                 div.classList.add(...grupo.classes);
-                div.innerHTML = html;
+                /* div.innerHTML = html; */
+                div.insertAdjacentHTML("beforeend", html);                
                 container.appendChild(div);
 
                 setTimeout(() => {
