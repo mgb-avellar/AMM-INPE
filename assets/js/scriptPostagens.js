@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const topicos = ["p1-index.html","p2-index.html"]; // Adicione todos os arquivos aqui
 
     topicos.forEach(arquivo => {
-        fetch(`posts/${arquivo}`)
+        fetch(`posts/${arquivo}?v=${Date.now()}`, { cache: "no-store" })
             .then(response => response.text())
             .then(html => {
                 const div = document.createElement("div");
@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 container.appendChild(div);
             })
             .catch(error => console.error("Erro ao carregar tópico:", error));
-    });
+    });    
 });
