@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("posts-container");
-    const topicos = ["p2-index.html","p2-index.html"]; // Adicione todos os arquivos aqui
+    const topicos = ["p1-index.html","p2-index.html"]; // Adicione todos os arquivos aqui
 
     topicos.forEach(arquivo => {
         fetch(`posts/${arquivo}`)
